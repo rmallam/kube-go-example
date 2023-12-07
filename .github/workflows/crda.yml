@@ -1,0 +1,19 @@
+name: skupper-intall
+
+on:
+  # https://docs.github.com/en/actions/reference/events-that-trigger-workflows
+  workflow_dispatch:
+
+jobs:
+  AWS:
+    # 🖊️ Uncomment this if you are using CRDA scan step above
+    # needs: crda-scan
+    name: Install RHSI on AWS
+    runs-on: ubuntu-20.04
+    environment: production
+
+    steps:
+
+    - name: Install skupper cli
+      run: |
+      curl https://skupper.io/install.sh | sh
